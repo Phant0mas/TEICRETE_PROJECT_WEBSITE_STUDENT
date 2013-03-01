@@ -323,3 +323,10 @@ ul {
 	overflow: hidden;
 	margin: 0 0 0 250px;
 }
+
+#videotitle {
+	width: 252px;
+	position:relative;
+	margin: 0 0 0 440px;
+	
+}
