@@ -326,7 +326,7 @@ ul {
 }
 
 #videotitle {
-	width: 252px;
+	width: auto;
 	position:relative;
 	margin: 0 0 0 440px;
 	
