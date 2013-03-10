@@ -110,7 +110,7 @@ ul {
 	width: auto;
 	margin: 0 0 0 0px;
 	padding: 0;
-	text-align: center;
+	text-align: left;
 }
 
 #copyright {
@@ -335,7 +335,7 @@ ul {
 
 #videotitle {
 	width: auto;
-	position:relative;
-	margin: 0 0 0 440px;
+	position: relative;
+	margin: 0 0 0 0px;
 	
 }
