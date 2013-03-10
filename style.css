@@ -22,6 +22,7 @@ a {
 
 a:hover {
 	text-decoration: none;
+	text-align: center;
 }
 
 body {
@@ -34,6 +35,7 @@ body {
 
 strong {
 	color: #cfcfcf;
+	text-align: left;
 }
 
 br.clear {
@@ -44,6 +46,7 @@ h1,h2,h3,h4 {
 	font-weight: normal;
 	color: #eaeaea;
 	text-shadow: 0 2px 1px #181818;
+	text-align: center;
 }
 
 h2,h3,h4 {
@@ -68,6 +71,7 @@ img.top {
 
 p {
 	margin-bottom: 1.25em;
+	text-align: left;
 }
 
 ul {
@@ -104,8 +108,9 @@ ul {
 #content {
 	/*width: 556px;*/
 	width: auto;
-	margin: 0 0 0 100px;
+	margin: 0 0 0 0px;
 	padding: 0;
+	text-align: left;
 }
 
 #copyright {
@@ -134,10 +139,12 @@ ul {
 
 #footer h2, #footer h3, #footer h4 {
 	color: #ffffff;
+	text-align: left;
 }
 
 #footer p {
 	margin-bottom: 0;
+	text-align: left;
 }
 
 #footer ul {
@@ -210,6 +217,7 @@ ul {
 	border-top: solid 1px #606060;
 	border-bottom: solid 1px #151515;
 	text-shadow: 0 1px 0 #101010;
+	text-align: center;
 }
 
 #main ul {
