@@ -7,7 +7,7 @@
 	Name       : Nameless Geometry
 	Version    : 1.0
 	Released   : 20130222
-	
+	Edited by Manolis Ragkoussis , Giannis Halvatzakis
 */
 
 * {
@@ -337,5 +337,14 @@ ul {
 	width: auto;
 	position: relative;
 	margin: 0 0 0 0px;
+	font-family:Sans-serif;
+	
+}
+#gametitle {
+	width: auto;
+	position: relative;
+	margin: 0 0 0 0px;
+	font-family:Monospace;
+	
 	
 }
