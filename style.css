@@ -78,6 +78,8 @@ ul {
 	margin-bottom: 3em;
 }
 
+
+
 #bg {
 	background: url('images/shadow.png') top left repeat-x;
 	padding: 40px 0 0 0;
@@ -87,17 +89,8 @@ ul {
 	background: #ffffff;
 }
 
-#box1 {
-	width: 556px;
-	overflow: hidden;
-	margin: 0 0 28px 0;
-}
 
-#box2 {
-	width: 264px;
-	overflow: hidden;
-	float: left;
-}
+
 
 #box3 {
 	width: 264px;
@@ -190,6 +183,14 @@ ul {
 	margin: 0 0 0 250px;
 }
 
+#gameinfo {
+	width: auto;
+	position: relative;
+	margin: 0 0 0 320px;
+	font-family:Monospace;
+
+}
+
 #logo {
 	position: absolute;
 	top: 32px;
@@ -205,7 +206,7 @@ ul {
 }
 
 #logo h1 {
-	font-size: 3em;
+	font-size: 4em;
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
