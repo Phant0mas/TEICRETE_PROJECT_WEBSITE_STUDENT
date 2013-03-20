@@ -27,14 +27,24 @@
  <script>
 function validateForm()
 {
-var x=document.forms["form"]["email"].value;
-var atpos=x.indexOf("@");
-var dotpos=x.lastIndexOf(".");
-if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+var a=document.forms["form"]["email"].value;
+var b=document.forms["form"]["first_name"].value;
+var c=document.forms["form"]["last_name"].value;
+var d=document.forms["form"]["message"].value;
+var atpos=a.indexOf("@");
+var dotpos=a.lastIndexOf(".");
+if ((atpos<1 || dotpos<atpos+2 || dotpos+2>=a.length) && a.length>0)
   {
   alert("Not a valid e-mail address");
   return false;
   }
+if (b.length==0||c.length==0||d.length==0)
+{
+	alert("Please complete all the required fields");
+	return false;
+	
+}
+
 }
 </script>
     	</head>
@@ -70,7 +80,7 @@ if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
 				</div>
 				<div id="main">
 				  <div id="content">
-                  <form name="form" onsubmit="return validateForm();" method="post" id="form">
+                  <form name="form" onSubmit="return validateForm();" method="post" id="form">
                     <div align="center">
                       <table width="450px" align="center">
                         </tr>
@@ -84,7 +94,7 @@ if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
                         </tr>
                         
                         <tr>
-                          <td valign="top"">
+                          <td valign="top">
                             <label for="last_name">Last Name *</label>
                           </td>
                           <td valign="top">
@@ -110,21 +120,23 @@ if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
                         </tr>
                         <tr>
                           <td valign="top">
-                            <label for="comments">Comments *</label>
+                            <label for="message">Message *</label>
                           </td>
-                          <td valign="top"><textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea></td>
+                          <td valign="top"><textarea  name="message" maxlength="1000" cols="25" rows="6"></textarea></td>
                           
                         </tr>
                         <tr>
                           <td colspan="2" style="text-align:center">
                               <input type="submit" value="Submit">   
-                              <input type="button" onclick="formReset()" value="Clean">
+                              <input type="button" onClick="formReset()" value="Clean">
                           </td>
                         </tr>
                       </table>
+                     <br> 
+                     *required
                     </div>
                   </form>
-
+ 
 				    <p><br class="clear" />
 			        </p>
 					</div>
@@ -133,8 +145,7 @@ if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
 				<div id="footer">
 					<div id="footerContent">
 						<h3>
-							About!!
-						</h3>
+							About</h3>
 						<p>
 							Αυτό το Project είναι μια ομαδική εργασία του Χαλβατζάκη Ιωάννη 3631 και του Ραγκούση Μανώλη 3554
 							για το μάθημα "Θεωρία Προγραματισμού Διαδυκτίου" για το εαρινό εξάμηνο 12-13Ε
