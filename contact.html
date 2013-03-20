@@ -18,34 +18,9 @@
 		<title>Project 1</title>
 		<link href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
-<script>
- function formReset()
- {
- document.getElementById("form").reset();
- }
- </script>
- <script>
-function validateForm()
-{
-var a=document.forms["form"]["email"].value;
-var b=document.forms["form"]["first_name"].value;
-var c=document.forms["form"]["last_name"].value;
-var d=document.forms["form"]["message"].value;
-var atpos=a.indexOf("@");
-var dotpos=a.lastIndexOf(".");
-if ((atpos<1 || dotpos<atpos+2 || dotpos+2>=a.length) && a.length>0)
-  {
-  alert("Not a valid e-mail address");
-  return false;
-  }
-if (b.length==0||c.length==0||d.length==0)
-{
-	alert("Please complete all the required fields");
-	return false;
-	
-}
-
-}
+<script src="content/javascript/FormReset.js" type="text/javascript">
+</script>
+ <script src="content/javascript/ValidateForm.js" type="text/javascript">
 </script>
     	</head>
 	<body>
@@ -80,6 +55,8 @@ if (b.length==0||c.length==0||d.length==0)
 				</div>
 				<div id="main">
 				  <div id="content">
+				  <h1>Contact Form</h1>
+				  <br>
                   <form name="form" onSubmit="return validateForm();" method="post" id="form">
                     <div align="center">
                       <table width="450px" align="center">
