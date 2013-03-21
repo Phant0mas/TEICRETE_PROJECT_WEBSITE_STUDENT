@@ -98,12 +98,30 @@ ul {
 	margin: 0 0 0 292px;
 }
 
+
 #content {
 	/*width: 556px;*/
 	width: auto;
 	margin: 0 0 0 0px;
 	padding: 0;
-	text-align: left;
+	text-align: center;
+	
+}
+#hidden {
+	/*width: 556px;*/
+	width: auto;
+	margin: 0 0 0 0px;
+	padding: 0;
+	text-align: center;
+	
+}
+#revealed {
+	/*width: 556px;*/
+	width: auto;
+	margin: 5000px 0px 0 0px;
+	padding: 0;
+	
+	
 }
 
 #copyright {
