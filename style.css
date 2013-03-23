@@ -13,6 +13,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	alignment-adjust: central;
 }
 
 a {
@@ -78,8 +79,30 @@ ul {
 	margin-bottom: 3em;
 }
 
+#slide-images{
+	display:block;
+	margin-left: auto;
+    margin-right: auto;
+	padding:auto;
+	width:256px;
+	height:256px;
+	overflow:hidden;
+	text-align: center;
+}
 
+#slide-images li{
+	display:block;
+	list-style-type:none;
+	margin-left: auto;
+    margin-right: auto;
+	padding:auto;
+	text-align: center;
+}
 
+#slide-images li img{
+	display:block;
+	text-align: center;
+}
 #bg {
 	background: url('images/shadow.png') top left repeat-x;
 	padding: 40px 0 0 0;
