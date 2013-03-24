@@ -108,18 +108,9 @@ ul {
 	padding: 40px 0 0 0;
 }
 
-#banner {
-	background: #ffffff;
-}
 
 
 
-
-#box3 {
-	width: 264px;
-	overflow: hidden;
-	margin: 0 0 0 292px;
-}
 
 
 #content {
@@ -130,22 +121,7 @@ ul {
 	text-align: center;
 	
 }
-#hidden {
-	/*width: 556px;*/
-	width: auto;
-	margin: 0 0 0 0px;
-	padding: 0;
-	text-align: center;
-	
-}
-#revealed {
-	/*width: 556px;*/
-	width: auto;
-	margin: 5000px 0px 0 0px;
-	padding: 0;
-	
-	
-}
+
 
 #copyright {
 	text-align: center;
@@ -207,10 +183,7 @@ ul {
 	float: left;
 }
 
-#footerSidebar {
-	width: 252px;
-	margin: 0 0 0 864px;
-}
+
 
 #header {
 	position: relative;
