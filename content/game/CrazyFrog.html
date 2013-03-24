@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<head>
+    <title>Crazy Frog</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=IE9">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <link rel="shortcut icon" href="game_content/favicon0.ico">
+    <link rel="image_src" href="web-image.jpg">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="stylesheet" href="game_content/style000.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="game_content/social-l.css" type="text/css" media="screen">
+
+    <!-- Facebook meta-tags -->
+    <meta property="og:url" content="http://www.mobilewebarcade.com/games/crazy-frog">
+    <meta property="og:title" content="TreSensa Crazy Frog Game">
+    <meta property="og:description" content="Catch all those crazy frogs!">
+    <meta property="og:image" content="http://games.tresensa.com/crazyfrog/web-image.jpg">
+
+    <!-- Twitter Card meta-tags -->
+    <meta name="twitter:card" content="player">
+    <meta name="twitter:site" content="@crazyfroggame">
+    <meta name="twitter:player" content="https://s3.amazonaws.com/games.tresensa.com/crazyfrog/index.html">
+    <meta name="twitter:player:width" content="640">
+    <meta name="twitter:player:height" content="832">
+    <meta name="twitter:title" content="TreSensa Crazy Frog Game">
+    <meta name="twitter:description" content="Catch all those crazy frogs!">
+    <meta name="twitter:image" content="http://games.tresensa.com/crazyfrog/web-image.jpg">
+
+    <meta name="viewport">
+
+    <script type="text/javascript" src="game_content/viewport.js"></script>
+    <script type="text/javascript" src="game_content/PxLoader.js"></script>
+    <script type="text/javascript" src="game_content/PxLoades.js"></script>
+    <script type="text/javascript" src="game_content/tge-min0.js"></script>
+
+    <!--Facebook and Twitter API references -->
+    <script type="text/javascript" src="game_content/all00000.js"></script>
+    <script type="text/javascript" src="game_content/anywhere.js"></script>
+    <script type="text/javascript" src="game_content/jquery00.js"></script>
+    <script type="text/javascript" src="game_content/iscroll0.js"></script>
+    <script type="text/javascript" src="game_content/GameLead.js"></script>
+    <script type="text/javascript" src="game_content/slb-min0.js"></script>
+
+
+    <script type="text/javascript" src="game_content/game-min.js"></script>
+        
+    <!-- Basic Google Analytics Tracking -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        //_gaq.push(['_setAccount', 'UA-29301358-8']); // Dev account
+        _gaq.push(['_setAccount', 'UA-29301358-4']); // Live account
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    <!-- TreSensa Game Engine -->
+    <script type="text/javascript">
+        function initializeTGE() {
+            var _myGame = new CrazyFrog();
+            if(_myGame.IsPlatformAcceptable()) {
+                _myGame.Launch( {gameDiv:"game_canvas", orientation:"portrait", reorientDiv:"wrong_orientation"} );
+            }
+            else
+            {
+                // Handle rejected platform as desired...
+            }
+        }
+        window.addEventListener ? window.addEventListener("load",initializeTGE,false) : window.attachEvent && window.attachEvent("onload",initializeTGE);
+    </script>
+       
+</head>
+
+
+<body>
+
+    <div id="wrong_orientation"><img src="game_content/reorient.jpg"></div>
+
+    <div id="viewporter" align="center" width="100%">
+        <div id="game_canvas" style="position:relative; width:640px; height:832px; text-align: center;"></div>
+        <div id="LeaderboardDiv" style="display: none;"></div>
+    </div>
+    <div id="fb-root"></div>
+
+</body>
+
+</html>
+
+<!-- This document saved from http://games.tresensa.com/crazyfrog/ -->
