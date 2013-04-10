@@ -126,17 +126,17 @@
 						$contactPhone = $_POST["telephone"];
 
 						$conn = mysql_connect("localhost","root","");
-						mysql_select_db("example",$conn); //connects to a database named "project"
+						mysql_select_db("example",$conn); //connects to a database named "example"
 						
-						$sql = INSERT INTO contacts (name,surname,phone,email)  
-						VALUES ( '$contactFirstName', '$contactLastName', '$contactPhone', '$contactPhone');
+						$sql = "INSERT INTO contacts (name,surname,phone,email)  
+						VALUES ( '$contactFirstName', '$contactLastName', '$contactPhone', '$contactPhone')";
 
 						if( !mysql_query($sql, $conn) )
 						{
 							die('Error' . mysql_error())
 						}
 						
-						$query1 = select * from contacts;
+						$query1 = "select * from contacts";
 
 						$result=mysql_query($query1, $conn) or die(mysql_error());
 						
@@ -145,10 +145,10 @@
 
 						while($newarray=mysql_fetch_array($result))
 						{
-						$fname=$newarray['first_name'];
-						$lname=$newarray['last_name'];
+						$fname=$newarray['name'];
+						$lname=$newarray['surname'];
+						$phone=$newarray['phone'];
 						$email=$newarray['email'];
-						$phone=$newarray['telephone'];
 
 						echo "<tr> <td> $fname</td> <td> $lname </td>  <td> $phone </td> <td> $email</td>";
 						echo "</tr>";
