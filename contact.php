@@ -48,7 +48,7 @@
 								<a href="fun.html">Fun</a>
 							</li>
 							<li class="last">
-								<a href="contact.html">Contact</a>
+								<a href="contact.php">Contact</a>
 							</li>
 						</ul>
 						<br class="clear" />
@@ -119,6 +119,43 @@
                     </div>
 					*required
                   </form>
+                  <?php
+						$contactFirstName = $_POST["first_name"];
+						$contactLastName = $_POST["last_name"];
+						$contactEmail = $_POST["email"];
+						$contactPhone = $_POST["telephone"];
+
+						$conn = mysql_connect("localhost","root","");
+						mysql_select_db("example",$conn); //connects to a database named "project"
+						
+						$sql = INSERT INTO contacts (name,surname,phone,email)  
+						VALUES ( '$_POST["first_name"]', '$_POST["last_name"]', '$_POST["telephone"]', '$_POST["email"]');
+
+						if( !mysql_query($sql, $conn) )
+						{
+							die('Error' . mysql_error())
+						}
+						
+						$query1 = select * from contacts;
+
+						$result=mysql_query($query1, $conn) or die(mysql_error());
+						
+						$number=mysql_num_rows($result);
+
+
+						while($newarray=mysql_fetch_array($result))
+						{
+						$fname=$newarray['first_name'];
+						$lname=$newarray['last_name'];
+						$email=$newarray['email'];
+						$phone=$newarray['telephone'];
+
+						echo "<tr> <td> $fname</td> <td> $lname </td>  <td> $phone </td> <td> $email</td>";
+						echo "</tr>";
+						}
+						echo "</table>";
+                  
+                  ?>
 
 				    <p><br class="clear" />
 			        </p>
