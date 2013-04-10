@@ -58,7 +58,7 @@
 				  <div id="content">
 				  <h1>Contact Form</h1>
 				  <br>
-                  <form name="form" action="formHandler.php" method="post" onSubmit="return validateForm();"  id="form">
+                  <form name="form" method="post" onSubmit="return validateForm();"  id="form">
                     <div align="center">
                       <table width="450px" align="center">
                         </tr>
@@ -119,43 +119,39 @@
                     </div>
 					*required
                   </form>
-                  <?php
-						$contactFirstName = $_POST["first_name"];
-						$contactLastName = $_POST["last_name"];
-						$contactEmail = $_POST["email"];
-						$contactPhone = $_POST["telephone"];
+                 <?php
 
-						$conn = mysql_connect("localhost","root","");
-						mysql_select_db("example",$conn); //connects to a database named "example"
-						
-						$sql = "INSERT INTO contacts (name,surname,phone,email)  
-						VALUES ( '$contactFirstName', '$contactLastName', '$contactPhone', '$contactPhone')";
+	$conn = mysql_connect("localhost","root","");
+	mysql_select_db("example",$conn); //connects to a database named "project"
+	
+	$sql = "INSERT INTO contacts (name,surname,email,phone) 
+	VALUES ( '$_POST[first_name]', '$_POST[last_name]', '$_POST[email]', '$_POST[telephone]' )";
 
-						if( !mysql_query($sql, $conn) )
-						{
-							die('Error' . mysql_error())
-						}
-						
-						$query1 = "select * from contacts";
+	if( !mysql_query($sql, $conn) )
+	{
+		die('Error' . mysql_error());
+	}
+	
+	$query1 = "select * from contacts";
 
-						$result=mysql_query($query1, $conn) or die(mysql_error());
-						
-						$number=mysql_num_rows($result);
+	$result=mysql_query($query1, $conn) or die(mysql_error());
+	
+	$number=mysql_num_rows($result);
 
 
-						while($newarray=mysql_fetch_array($result))
-						{
-						$fname=$newarray['name'];
-						$lname=$newarray['surname'];
-						$phone=$newarray['phone'];
-						$email=$newarray['email'];
+	while($newarray=mysql_fetch_array($result))
+	{
+	$fname=$newarray['name'];
+	$lname=$newarray['surname'];
+	$email=$newarray['email'];
+	$phone=$newarray['phone'];
 
-						echo "<tr> <td> $fname</td> <td> $lname </td>  <td> $phone </td> <td> $email</td>";
-						echo "</tr>";
-						}
-						echo "</table>";
-                  
-                  ?>
+	echo "<table border=1><tr> <td> $fname</td> <td> $lname </td> <td> $email</td> <td> $phone </td> </tr>";
+	}
+	echo "</table>";
+
+	
+?>
 
 				    <p><br class="clear" />
 			        </p>
