@@ -129,7 +129,7 @@
 						mysql_select_db("example",$conn); //connects to a database named "project"
 						
 						$sql = INSERT INTO contacts (name,surname,phone,email)  
-						VALUES ( '$_POST["first_name"]', '$_POST["last_name"]', '$_POST["telephone"]', '$_POST["email"]');
+						VALUES ( '$contactFirstName', '$contactLastName', '$contactPhone', '$contactPhone');
 
 						if( !mysql_query($sql, $conn) )
 						{
