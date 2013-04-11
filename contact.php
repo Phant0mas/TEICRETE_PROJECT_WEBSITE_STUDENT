@@ -119,38 +119,33 @@
                     </div>
 					*required
                   </form>
-                 <?php
+               <?php
 
-	$conn = mysql_connect("localhost","root","");
-	mysql_select_db("example",$conn); //connects to a database named "project"
-	
-	$sql = "INSERT INTO contacts (name,surname,email,phone) 
-	VALUES ( '$_POST[first_name]', '$_POST[last_name]', '$_POST[email]', '$_POST[telephone]' )";
+$con = mysql_connect("localhost","root","");
+mysql_select_db("example",$con); 
 
-	if( !mysql_query($sql, $conn) )
-	{
-		die('Error' . mysql_error());
-	}
-	
-	$query1 = "select * from contacts";
+$sql = "INSERT into contacts (name,surname,phone,email) VALUES ( '$_POST[first_name]', '$_POST[last_name]', '$_POST[telephone]', '$_POST[email]')";
 
-	$result=mysql_query($query1, $conn) or die(mysql_error());
-	
-	$number=mysql_num_rows($result);
+mysql_query($sql, $con) or die(mysql_error());
+
+$query1 = "select * from contacts";
+
+$result=mysql_query($query1, $con) or die(mysql_error());
+
+$number=mysql_num_rows($result);
+echo "<table>";
+while($newarray=mysql_fetch_array($result))
+{
+$fname=$newarray['name'];
+$lname=$newarray['surname'];
+$phone=$newarray['phone'];
+$email=$newarray['email'];
 
 
-	while($newarray=mysql_fetch_array($result))
-	{
-	$fname=$newarray['name'];
-	$lname=$newarray['surname'];
-	$email=$newarray['email'];
-	$phone=$newarray['phone'];
+echo "<tr> <td> $fname</td> <td> $lname </td> <td> $phone </td> <td> $email</td></tr>";
+}
+echo "</table>";
 
-	echo "<table border=1><tr> <td> $fname</td> <td> $lname </td> <td> $email</td> <td> $phone </td> </tr>";
-	}
-	echo "</table>";
-
-	
 ?>
 
 				    <p><br class="clear" />
