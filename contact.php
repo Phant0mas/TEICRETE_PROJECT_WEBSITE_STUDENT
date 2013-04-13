@@ -121,33 +121,34 @@
                   </form>
                <?php
 
-$con = mysql_connect("localhost","root","");
-mysql_select_db("example",$con); 
+					$con = mysql_connect("localhost","root","");
+					mysql_select_db("example",$con); 
+					if( !empty($_POST) )
+					{
+					$sql = "INSERT into contacts (name,surname,phone,email) VALUES ( '$_POST[first_name]', '$_POST[last_name]', '$_POST[telephone]', '$_POST[email]')";
+					}
+					mysql_query($sql, $con) or die(mysql_error());
 
-$sql = "INSERT into contacts (name,surname,phone,email) VALUES ( '$_POST[first_name]', '$_POST[last_name]', '$_POST[telephone]', '$_POST[email]')";
+					$query1 = "select * from contacts";
 
-mysql_query($sql, $con) or die(mysql_error());
+					$result=mysql_query($query1, $con) or die(mysql_error());
 
-$query1 = "select * from contacts";
-
-$result=mysql_query($query1, $con) or die(mysql_error());
-
-$number=mysql_num_rows($result);
-echo "<table border=1>";
-while($newarray=mysql_fetch_array($result))
-{
-$id=$newarray['id'];
-$fname=$newarray['name'];
-$lname=$newarray['surname'];
-$phone=$newarray['phone'];
-$email=$newarray['email'];
+					$number=mysql_num_rows($result);
+					echo "<table border=1>";
+					while($newarray=mysql_fetch_array($result))
+					{
+					$id=$newarray['id'];
+					$fname=$newarray['name'];
+					$lname=$newarray['surname'];
+					$phone=$newarray['phone'];
+					$email=$newarray['email'];
 
 
-echo "<tr><td>ID: $id </td> <td>First Name: $fname </td> <td>Last Name: $lname </td> <td>Telephone: $phone </td> <td>E-Mail: $email </td></tr>";
-}
-echo "</table>";
+					echo "<tr><td>ID: $id </td> <td>First Name: $fname </td> <td>Last Name: $lname </td> <td>Telephone: $phone </td> <td>E-Mail: $email </td></tr>";
+					}
+					echo "</table>";
 
-?>
+				?>
 </div>
 
 				    <p><br class="clear" />
