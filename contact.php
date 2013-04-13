@@ -116,7 +116,7 @@
                       </table>
                      <br> 
                      
-                    </div>
+                    
 					*required
                   </form>
                <?php
@@ -133,20 +133,22 @@ $query1 = "select * from contacts";
 $result=mysql_query($query1, $con) or die(mysql_error());
 
 $number=mysql_num_rows($result);
-echo "<table>";
+echo "<table border=1>";
 while($newarray=mysql_fetch_array($result))
 {
+$id=$newarray['id'];
 $fname=$newarray['name'];
 $lname=$newarray['surname'];
 $phone=$newarray['phone'];
 $email=$newarray['email'];
 
 
-echo "<tr> <td> $fname</td> <td> $lname </td> <td> $phone </td> <td> $email</td></tr>";
+echo "<tr><td>ID: $id </td> <td>First Name: $fname </td> <td>Last Name: $lname </td> <td>Telephone: $phone </td> <td>E-Mail: $email </td></tr>";
 }
 echo "</table>";
 
 ?>
+</div>
 
 				    <p><br class="clear" />
 			        </p>
