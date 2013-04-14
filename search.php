@@ -14,9 +14,9 @@ $con=mysql_connect("localhost","root","");
 
 
 $result = mysql_query("SELECT * FROM contacts WHERE $n ='$m'",$con);
-$number=mysql_num_rows($result);
 
-while($row = mysql_fetch_array($number))
+
+while($row = mysql_num_rows($result))
   {
   echo $row['id'] ." ". $row['name']." ".$row['surname']." ".$row['phone']." ". $row['email'];
   echo "<br>";
