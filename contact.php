@@ -119,7 +119,27 @@
                     
 					*required </br></br>
                   </form>
-                 
+				  				
+                 <form method="post">
+     Search: <input type="text" name="search_term" /><br />
+    <input type="submit" name="submit" value="Submit" />
+    </form>
+	<?php
+ mysql_connect ("localhost", "root","")  or die (mysql_error());
+ mysql_select_db ("example");
+
+ $search_term = $_POST['search_term'];
+ 
+$sql = mysql_query("select * from contacts where name or id like '%$search_term%'");
+
+echo "<table border=1><br>Search Results<br>";
+while ($row = mysql_fetch_array($sql)){
+
+    echo "<tr><td>ID: ".$row['id']. " </td> <td>First Name: ".$row['name']." </td> <td>Last Name: ".$row['surname']." </td> <td>Telephone: ".$row['phone']." </td> <td>E-Mail: ".$row['email']." </td></tr>";
+	echo '<br/><br/>';
+	}
+	echo "</table>";
+ ?>
                <?php
 
 					$con = mysql_connect("localhost","root","");
@@ -155,20 +175,7 @@
 					
 				?>
 				
-				<form name="input" action="search.php" method="post">
-				search: <input type="text" id='req1'name="req0" value="">
-				<input type="reset" value="Clear"/><br>
-				by
-				<select name="input1">
-				<option value="id">id</option>
-				<option value="name">name</option>
-				<option value="surname">surname</option>
-				<option value="phone">phone</option>
-				<option value="email">email</option>
-				</select>
-
-				<input type="submit" value="Submit">
-				</form> 
+ 
 				
 		</div>
 
