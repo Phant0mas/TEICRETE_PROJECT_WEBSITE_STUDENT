@@ -117,39 +117,60 @@
                      <br> 
                      
                     
-					*required
+					*required </br></br>
                   </form>
+                 
                <?php
 
 					$con = mysql_connect("localhost","root","");
 					mysql_select_db("example",$con); 
 					if( !empty($_POST) )
 					{
-					$sql = "INSERT into contacts (name,surname,phone,email) VALUES ( '$_POST[first_name]', '$_POST[last_name]', '$_POST[telephone]', '$_POST[email]')";
+						$sql = "INSERT into contacts (name,surname,phone,email) VALUES ( '$_POST[first_name]', '$_POST[last_name]', '$_POST[telephone]', '$_POST[email]')";
 					}
 					mysql_query($sql, $con) or die(mysql_error());
 
 					$query1 = "select * from contacts";
+					
 
 					$result=mysql_query($query1, $con) or die(mysql_error());
+					
 
 					$number=mysql_num_rows($result);
 					echo "<table border=1>";
 					while($newarray=mysql_fetch_array($result))
 					{
-					$id=$newarray['id'];
-					$fname=$newarray['name'];
-					$lname=$newarray['surname'];
-					$phone=$newarray['phone'];
-					$email=$newarray['email'];
+						$id=$newarray['id'];
+						$fname=$newarray['name'];
+						$lname=$newarray['surname'];
+						$phone=$newarray['phone'];
+						$email=$newarray['email'];
 
 
-					echo "<tr><td>ID: $id </td> <td>First Name: $fname </td> <td>Last Name: $lname </td> <td>Telephone: $phone </td> <td>E-Mail: $email </td></tr>";
+						echo "<tr><td>ID: $id </td> <td>First Name: $fname </td> <td>Last Name: $lname </td> <td>Telephone: $phone </td> <td>E-Mail: $email </td></tr>";
 					}
 					echo "</table>";
-
+					
+						
+					
 				?>
-</div>
+				
+				<form name="input" action="search.php" method="post">
+				search: <input type="text" id='req1'name="req0" value="">
+				<input type="reset" value="Clear"/><br>
+				by
+				<select name="input1">
+				<option value="id">id</option>
+				<option value="name">name</option>
+				<option value="surname">surname</option>
+				<option value="phone">phone</option>
+				<option value="email">email</option>
+				</select>
+
+				<input type="submit" value="Submit">
+				</form> 
+				
+		</div>
 
 				    <p><br class="clear" />
 			        </p>
