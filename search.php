@@ -16,8 +16,7 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-$result = mysqli_query($con,"SELECT * FROM contacts
-WHERE $n ='$m'");
+$result = mysqli_query($con,"SELECT * FROM contacts WHERE $n ='$m'");
 
 while($row = mysqli_fetch_array($result))
   {
