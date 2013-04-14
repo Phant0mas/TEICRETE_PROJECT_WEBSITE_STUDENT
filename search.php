@@ -10,10 +10,10 @@ $m=$_POST["req0"];
 $n=$_POST["input1"];
 
 $con=mysql_connect("localhost","root","");
-// Check connection
 
 
-$result = mysql_query($con,"SELECT * FROM contacts WHERE $n ='$m'");
+
+$result = mysql_query("SELECT * FROM contacts WHERE $n ='$m'",$con);
 
 while($row = mysql_fetch_array($result))
   {
