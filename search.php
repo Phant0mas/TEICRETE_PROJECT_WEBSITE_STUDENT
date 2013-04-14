@@ -15,12 +15,18 @@ $con=mysql_connect("localhost","root","");
 
 $result = mysql_query("SELECT * FROM contacts WHERE $n ='$m'",$con);
 
-
-while($row = mysql_num_rows($result))
+echo "<table border=1>";
+while($newarray=mysql_fetch_array($result))
   {
-  echo $row['id'] ." ". $row['name']." ".$row['surname']." ".$row['phone']." ". $row['email'];
+						$id=$newarray['id'];
+						$fname=$newarray['name'];
+						$lname=$newarray['surname'];
+						$phone=$newarray['phone'];
+						$email=$newarray['email'];
+  echo "<tr><td>ID: $id </td> <td>First Name: $fname </td> <td>Last Name: $lname </td> <td>Telephone: $phone </td> <td>E-Mail: $email </td></tr>";
   echo "<br>";
   }
+  echo "</table>";
 echo $result;
 ?> 
 </body>
