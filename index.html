@@ -42,7 +42,7 @@ xmlhttp.onreadystatechange=function()
 {
 if (xmlhttp.readyState==4 && xmlhttp.status==200)
 {
-document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+document.getElementById("img").innerHTML=xmlhttp.responseText;
 }
 }
 xmlhttp.open("GET","ajax.html",true);
@@ -50,7 +50,7 @@ xmlhttp.send();
 }
 </script>
 <script type="text/javascript">
-function loadXML1Doc()
+function loadXMLDoc2()
 {
 var xmlhttp;
 if (window.XMLHttpRequest)
@@ -65,15 +65,15 @@ xmlhttp.onreadystatechange=function()
 {
 if (xmlhttp.readyState==4 && xmlhttp.status==200)
 {
-document.getElementById("myDiv1").innerHTML=xmlhttp.responseText;
+document.getElementById("img1").innerHTML=xmlhttp.responseText;
 }
 }
-xmlhttp.open("GET","ajax_info.html",true);
+xmlhttp.open("GET","ajax2.html",true);
 xmlhttp.send();
 }
 </script>
 <script type="text/javascript">
-function loadXML2Doc()
+function loadXMLDoc3()
 {
 var xmlhttp;
 if (window.XMLHttpRequest)
@@ -88,10 +88,10 @@ xmlhttp.onreadystatechange=function()
 {
 if (xmlhttp.readyState==4 && xmlhttp.status==200)
 {
-document.getElementById("myDiv2").innerHTML=xmlhttp.responseText;
+document.getElementById("img2").innerHTML=xmlhttp.responseText;
 }
 }
-xmlhttp.open("GET","ajax_infoo.html",true);
+xmlhttp.open("GET","ajax3.html",true);
 xmlhttp.send();
 }
 </script>
@@ -137,8 +137,7 @@ xmlhttp.send();
 
 
         <div id="content">
-		<div id="myDiv">
- <a href="javascript:void(0)" onclick="loadXMLDoc()"><img src="content/images/beethoven_1.jpg" width="640" height="480" /></a> </div>
+
           <h1>Επιλέξτε βιογραφικό σημείωμα</h1>
 
           <p><br /></p>
@@ -229,7 +228,10 @@ xmlhttp.send();
 						
         </div>
           </div>
+		  		<div id="img">
+ <a href="javascript:void(0)" onclick="loadXMLDoc()"><img src="content/images/jobs1.jpg" width="640" height="480" /></a> </div>
 		  </div>
+		  
 </div>
           <div id="footer">
             <div id="footerContent">

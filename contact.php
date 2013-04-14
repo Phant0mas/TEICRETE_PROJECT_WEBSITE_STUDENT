@@ -23,6 +23,7 @@
 </script>
  <script src="content/javascript/ValidateForm.js" type="text/javascript">
 </script>
+
     	</head>
 	<body>
 		<div id="bg">
@@ -120,28 +121,15 @@
 					*required </br></br>
                   </form>
 				  				
-                 <form method="post">
-     Search: <input type="text" name="search_term" /><br />
-    <input type="submit" name="submit" value="Submit" />
+                 <form method="post" action="search.php" >
+     Search: <input type="text" name="search_term" />
+    <input type="submit" name="submit" value="Search" />
     </form>
-	<?php
- mysql_connect ("localhost", "root","")  or die (mysql_error());
- mysql_select_db ("example");
-
- $search_term = $_POST['search_term'];
- 
-$sql = mysql_query("select * from contacts where name or id like '%$search_term%'");
-
-echo "<table border=1><br>Search Results<br>";
-while ($row = mysql_fetch_array($sql)){
-
-    echo "<tr><td>ID: ".$row['id']. " </td> <td>First Name: ".$row['name']." </td> <td>Last Name: ".$row['surname']." </td> <td>Telephone: ".$row['phone']." </td> <td>E-Mail: ".$row['email']." </td></tr>";
-	echo '<br/><br/>';
-	}
-	echo "</table>";
- ?>
+	
+	
+ <br>
                <?php
-
+error_reporting(E_ALL ^ E_NOTICE);
 					$con = mysql_connect("localhost","root","");
 					mysql_select_db("example",$con); 
 					if( !empty($_POST) )
@@ -155,7 +143,7 @@ while ($row = mysql_fetch_array($sql)){
 
 					$result=mysql_query($query1, $con) or die(mysql_error());
 					
-
+					
 					$number=mysql_num_rows($result);
 					echo "<table border=1>";
 					while($newarray=mysql_fetch_array($result))
@@ -165,7 +153,7 @@ while ($row = mysql_fetch_array($sql)){
 						$lname=$newarray['surname'];
 						$phone=$newarray['phone'];
 						$email=$newarray['email'];
-
+					
 
 						echo "<tr><td>ID: $id </td> <td>First Name: $fname </td> <td>Last Name: $lname </td> <td>Telephone: $phone </td> <td>E-Mail: $email </td></tr>";
 					}
